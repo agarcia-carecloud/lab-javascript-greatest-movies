@@ -3005,7 +3005,17 @@ function dramaMoviesRate(arr){
     return ratesAverage(dramaMovies)
   }
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-
+function orderByYear(arr){
+    if(arr.length === 0) return 0;
+    const sortedArr = arr.sort(function(a, b){
+      if(a.year > b.year) return 1;
+      if(a.year < b.year) return -1;
+      if(a.title > b.title)return 1;
+      if(a.title < b.title) return -1;
+      return 0;
+      })
+      return sortedArr;
+  }
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
