@@ -3017,7 +3017,19 @@ function orderByYear(arr){
       return sortedArr;
   }
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
-
+function orderAlphabetically(arr){
+    if(arr.length === 0)return 0;
+    const alphabeticalTitles = arr.sort(function(a,b){//return array to sory alphabetically by title
+      if(a.title > b.title)return 1;
+      if(a.title < b.title)return -1;
+      return 0;
+    })
+    if(alphabeticalTitles.length > 20){//if more than 20 movies, return an array with only the first 20 titles, mapping the new array to only contain the movie titles. 
+      const smallList = alphabeticalTitles.map(movie => movie.title).slice(0,19);
+      return smallList;
+    }
+    else return alphabeticalTitles.map(movie => movie.title);
+  }
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
